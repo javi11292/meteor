@@ -1,29 +1,46 @@
 import React from "react"
-import useLogic from "./useLogic"
 import { TextField } from "@material-ui/core"
 import Autocomplete from "components/Autocomplete"
 import LoadingBar from "components/LoadingBar"
+import CurrentWeather from "components/CurrentWeather"
+import ForecastWeather from "components/ForecastWeather"
+import Fade from "components/Fade"
+import classnames from "classnames"
+
+import useLogic from "./useLogic"
 
 const Main = props => {
-    const { classes, cityName, onChange, onSelect } = useLogic()
+    const { classes, cityName, onChange, onSelect, inputRef, onFocus, onBlur, showDialog, city } = useLogic()
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} onClick={onBlur}>
+            <div className={classnames(classes.background, classes.filter)} />
             <LoadingBar />
-            <div className={classes.weatherInfo}>
 
+            <div className={classes.weatherInfoContainer}>
+                {city &&
+                    <Fade
+                        className={classes.weatherInfo}
+                        transitionKey={city.id}>
+                        <CurrentWeather city={city} />
+                        <ForecastWeather city={city} />
+                    </Fade>
+                }
             </div>
 
             <div className={classes.citySearchContainer}>
                 <Autocomplete
+                    show={showDialog}
                     onSelect={onSelect}
                     cityName={cityName} />
                 <TextField
+                    onFocus={onFocus}
+                    inputRef={inputRef}
                     fullWidth
                     className={classes.citySearch}
                     value={cityName}
                     onChange={onChange}
-                    InputProps={{ classes: { notchedOutline: classes.outline, } }}
+                    InputProps={{ classes: { notchedOutline: classes.outline } }}
                     placeholder="search city..."
                     margin="dense"
                     variant="outlined" />

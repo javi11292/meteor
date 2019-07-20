@@ -1,7 +1,8 @@
 import React from "react"
 import { Fade, LinearProgress } from "@material-ui/core"
-import useStyles from "./useStyles"
 import { useStore } from "eztore"
+
+import useStyles from "./useStyles"
 
 const LoadingBar = React.memo(props => {
     const [loading] = useStore("loading")

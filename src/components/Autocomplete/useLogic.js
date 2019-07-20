@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
-import useStyles from "./useStyles"
 import { useStore } from "eztore"
+
+import useStyles from "./useStyles"
 
 const MAX_CITIES = 10
 
@@ -8,8 +9,8 @@ function filterCities(cities, name) {
     try {
         const regExp = new RegExp(`^${name}`, "img")
         let filteredCities = []
-        for (let i = 0; i < cities.length; i++) {
-            const city = cities[i]
+        for (const cityId in cities) {
+            const city = cities[cityId]
             if (city.name.match(regExp)) filteredCities.push(city)
             if (filteredCities.length === MAX_CITIES) break
         }

@@ -1,11 +1,13 @@
 import React from "react"
-import useLogic from "./useLogic"
 import { List, ListItem, ListItemText, Paper } from "@material-ui/core"
+
+import useLogic from "./useLogic"
+
 
 const Autocomplete = React.memo(props => {
     const { classes, filteredCities } = useLogic(props)
 
-    return !filteredCities ? null : (
+    return !filteredCities  || !props.show ? null : (
         <Paper className={classes.root}>
             <List className={classes.list}>
                 {filteredCities.map(city => (

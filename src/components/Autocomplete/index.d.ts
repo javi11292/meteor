@@ -2,6 +2,7 @@ import React from "react"
 
 export interface AutocompleteProps {
     cityName?: string,
+    show: boolean,
     onSelect: Function,
 }
 
