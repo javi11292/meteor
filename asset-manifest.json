@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/meteor/static/js/main.69e3dc26.chunk.js",
+    "main.js.map": "/meteor/static/js/main.69e3dc26.chunk.js.map",
+    "runtime~main.js": "/meteor/static/js/runtime~main.c3248b4c.js",
+    "runtime~main.js.map": "/meteor/static/js/runtime~main.c3248b4c.js.map",
+    "static/js/2.f7256afc.chunk.js": "/meteor/static/js/2.f7256afc.chunk.js",
+    "static/js/2.f7256afc.chunk.js.map": "/meteor/static/js/2.f7256afc.chunk.js.map",
+    "index.html": "/meteor/index.html",
+    "precache-manifest.d9e47b6791af0b655ab5a62476b24214.js": "/meteor/precache-manifest.d9e47b6791af0b655ab5a62476b24214.js",
+    "service-worker.js": "/meteor/service-worker.js"
+  }
+}
