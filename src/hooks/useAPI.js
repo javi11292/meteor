@@ -7,7 +7,7 @@ function useAPI() {
 
     const makeRequest = useCallback(url => get(`${url}&appid=${API_KEY}`), [get])
 
-    const getCurrentWeather = useCallback(city => makeRequest(`https://api.openweathermap.org/data/2.5/weather?q=${city}`), [makeRequest])
+    const getCurrentWeather = useCallback(city => makeRequest(`https://api.openweathermap.org/data/2.5/weather?id=${city}`), [makeRequest])
 
     return { getCurrentWeather }
 }

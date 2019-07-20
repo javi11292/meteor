@@ -14,24 +14,23 @@ function filterCities(cities, name) {
             if (filteredCities.length === MAX_CITIES) break
         }
         return filteredCities.sort((a, b) => a.name.localeCompare(b.name))
-    } catch {
-        return []
-    }
+    } catch { }
+    return []
 }
 
 function useLogic(props) {
     const classes = useStyles()
     const [cities] = useStore("cities")
-    const [filteredCities, setFilteredCities] = useState([])
+    const [filteredCities, setFilteredCities] = useState()
 
     useEffect(() => {
         if (!props.cityName) {
-            setFilteredCities([])
+            setFilteredCities()
             return
         }
 
         const filteredCities = filterCities(cities[props.cityName.charAt(0).toUpperCase()] || [], props.cityName)
-        setFilteredCities(filteredCities)
+        setFilteredCities(filteredCities.length ? filteredCities : undefined)
     }, [props.cityName, cities])
 
     return { classes, filteredCities }

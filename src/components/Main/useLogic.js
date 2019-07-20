@@ -4,7 +4,7 @@ import cities from "libraries/city.list"
 import { useStore } from "eztore"
 import useStyles from "./useStyles"
 
-const BATCH = 1000
+const BATCH = 10
 
 function iterate(citiesByLetter = {}, pos = 0) {
     return new Promise(resolve => {
@@ -30,6 +30,7 @@ function useLogic() {
     const classes = useStyles()
     const [, setCities] = useStore("cities")
     const [cityName, setCityName] = useState("")
+    const [currentCity, setCurrentCity] = useState()
     const { getCurrentWeather } = useAPI()
 
     useEffect(() => {
@@ -41,18 +42,22 @@ function useLogic() {
     }, [setCities])
 
     useEffect(() => {
-        async function test() {
-            await getCurrentWeather("Madrid")
+        async function makeRequest() {
+            await getCurrentWeather(currentCity.id)
         }
 
-        test()
-    }, [getCurrentWeather])
+        if (currentCity) makeRequest()
+    }, [getCurrentWeather, currentCity])
 
     function onChange({ target }) {
         setCityName(target.value)
     }
 
-    return { classes, cityName, onChange }
+    function onSelect(city) {
+        setCurrentCity(city)
+    }
+
+    return { classes, cityName, onChange, onSelect }
 }
 
 export default useLogic
