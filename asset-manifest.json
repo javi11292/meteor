@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/meteor/static/js/main.f59ee517.chunk.js",
-    "main.js.map": "/meteor/static/js/main.f59ee517.chunk.js.map",
+    "main.js": "/meteor/static/js/main.5053cb1f.chunk.js",
+    "main.js.map": "/meteor/static/js/main.5053cb1f.chunk.js.map",
     "runtime~main.js": "/meteor/static/js/runtime~main.c3248b4c.js",
     "runtime~main.js.map": "/meteor/static/js/runtime~main.c3248b4c.js.map",
-    "static/js/2.d613cfa7.chunk.js": "/meteor/static/js/2.d613cfa7.chunk.js",
-    "static/js/2.d613cfa7.chunk.js.map": "/meteor/static/js/2.d613cfa7.chunk.js.map",
+    "static/js/2.642a44ef.chunk.js": "/meteor/static/js/2.642a44ef.chunk.js",
+    "static/js/2.642a44ef.chunk.js.map": "/meteor/static/js/2.642a44ef.chunk.js.map",
     "index.html": "/meteor/index.html",
-    "precache-manifest.5d3f23083fd813606c9d62ff2b4304c5.js": "/meteor/precache-manifest.5d3f23083fd813606c9d62ff2b4304c5.js",
+    "precache-manifest.6263a7c764e042c5ea94150e9fc31310.js": "/meteor/precache-manifest.6263a7c764e042c5ea94150e9fc31310.js",
     "service-worker.js": "/meteor/service-worker.js"
   }
 }
