@@ -4,7 +4,7 @@ export default {
         reducer: (state, value) => value,
     },
     cities: {
-        state: null,
+        state: {},
         reducer: (state, value) => value,
     }
 }
