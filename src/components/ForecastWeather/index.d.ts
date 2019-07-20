@@ -1,11 +1,10 @@
 import React from "react"
 import City from "models/City"
 
-export interface CurrentWeatherProps {
+export interface ForecastWeatherProps {
     city: City,
-    weather: string,
 }
 
-declare const ForecastWeather: React.ComponentType<CurrentWeatherProps>
+declare const ForecastWeather: React.ComponentType<ForecastWeatherProps>
 
 export default ForecastWeather

@@ -5,11 +5,12 @@ import useStyles from "./useStyles"
 const WeekDayWeather = React.memo(props => {
     const classes = useStyles(props)
 
-    return (
+    return props.weather && (
         <div className={classes.root}>
             <div className={classes.background} />
             <div className={classes.content}>
-                {props.day}
+                <div>{props.day}</div>
+                <div>{props.weather.main.temp < 273 ? "-" : "+"}{Math.round((props.weather.main.temp - 273))}º</div>
             </div>
         </div>
 

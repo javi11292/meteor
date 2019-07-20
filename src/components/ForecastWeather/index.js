@@ -6,13 +6,13 @@ import useLogic from "./useLogic"
 const DAYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 
 const ForecastWeather = React.memo(props => {
-    const { classes } = useLogic(props)
+    const { classes, weather } = useLogic(props)
 
     return (
         <div className={classes.root}>
-            {DAYS.map(day => (
+            {weather && DAYS.map((day, index) => (
                 <WeekDayWeather
-                    weather="clear"
+                    weather={weather[index]}
                     key={day}
                     day={day} />
             ))}

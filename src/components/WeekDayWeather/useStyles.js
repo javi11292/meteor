@@ -13,11 +13,32 @@ const BORDERS = {
 }
 
 function getColor(weather) {
-    return COLORS[weather] || COLORS.clear
+    const key = getKey(weather)
+    return COLORS[key]
 }
 
 function getBorder(weather) {
-    return BORDERS[weather] || BORDERS.clear
+    const key = getKey(weather)
+    return BORDERS[key]
+}
+
+function getKey(weather) {
+    try {
+        const id = weather.weather[0].id.toString()
+
+        if (id === "800") {
+            return "clear"
+        }
+
+        if (id.startsWith("80")) {
+            return "cloudy"
+        }
+
+        if (id.startsWith("5")) {
+            return "rainy"
+        }
+    } catch { }
+    return "clear"
 }
 
 export default makeStyles(theme => ({
