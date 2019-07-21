@@ -12,7 +12,7 @@ const ForecastWeather = React.memo(props => {
         <div className={classes.root}>
             {weather && DAYS.map((day, index) => (
                 <WeekDayWeather
-                    weather={weather[index]}
+                    info={weather[index]}
                     key={day}
                     day={day} />
             ))}

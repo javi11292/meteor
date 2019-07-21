@@ -10,7 +10,6 @@ export default makeStyles(theme => ({
         backgroundSize: "cover",
     },
     city: {
-        marginTop: theme.spacing(3),
         fontSize: "2.5rem",
         fontWeight: 300,
     },

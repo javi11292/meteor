@@ -4,9 +4,37 @@ import moment from "moment"
 
 import useStyles from "./useStyles"
 
+export const symbol = Symbol("weather key")
+
+export const WEATHER_KEYS = {
+    CLEAR: "clear",
+    CLOUDY: "cloudy",
+    RAINY: "rainy",
+    UNKNOW: "unknow",
+}
+
 function setMondayFirst(day) {
     const minusOne = day - 1
     return minusOne < 0 ? 6 : minusOne
+}
+
+function getKey(info) {
+    try {
+        const id = info.weather[0].id.toString()
+
+        if (id === "800") {
+            return WEATHER_KEYS.CLEAR
+        }
+
+        if (id.startsWith("80")) {
+            return WEATHER_KEYS.CLOUDY
+        }
+
+        if (id.startsWith("5")) {
+            return WEATHER_KEYS.RAINY
+        }
+    } catch { }
+    return WEATHER_KEYS.UNKNOW
 }
 
 function useLogic(props) {
@@ -23,7 +51,7 @@ function useLogic(props) {
 
                     return {
                         ...acc,
-                        [day]: data,
+                        [day]: { ...data, [symbol]: getKey(data) },
                     }
                 }, {}))
             }

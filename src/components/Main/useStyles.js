@@ -23,9 +23,9 @@ export default makeStyles(theme => ({
     weatherInfoContainer: {
         flex: 1,
         alignSelf: "stretch",
-        marginLeft: theme.spacing(3),
-        marginRight: theme.spacing(3),
-        marginTop: theme.spacing(10),
+        marginLeft: theme.spacing(5),
+        marginRight: theme.spacing(5),
+        marginTop: theme.spacing(5),
         borderRadius: theme.spacing(1),
         overflow: "hidden",
     },
@@ -35,7 +35,7 @@ export default makeStyles(theme => ({
     },
     citySearchContainer: {
         position: "relative",
-        margin: theme.spacing(6),
+        margin: theme.spacing(4),
         width: "30%",
     },
     citySearch: {

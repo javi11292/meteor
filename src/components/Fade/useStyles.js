@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core"
 
-export const TIMEOUT = 500
+export const TIMEOUT = 1000
 
 export default makeStyles(theme => ({
     enter: {

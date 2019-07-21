@@ -3,7 +3,7 @@ import City from "models/City"
 
 export interface WeekDayWeather {
     day: string,
-    weather: object,
+    info: object,
 }
 
 declare const WeekDayWeather: React.ComponentType<WeekDayWeather>
