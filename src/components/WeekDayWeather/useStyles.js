@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core"
-import { symbol, WEATHER_KEYS } from "components/ForecastWeather/useLogic"
+import { symbol, WEATHER_KEYS } from "libraries/Util"
 
 function getBackground(info) {
     if (!info) return "rgb(0,0,0)"
@@ -53,11 +53,13 @@ export default makeStyles(theme => ({
         boxShadow: props => `1px 0 0 0 black, 0 -5px 0 0 ${getBorder(props.info)}`,
     },
     info: {
+        flex: 1,
+        position: "relative",
+        width: "100%",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        flex: 1,
     },
     iconContainer: {
         background: "rgba(0,0,0,0.2)",
@@ -75,6 +77,14 @@ export default makeStyles(theme => ({
     },
     shake: {
         animation: "$shake 1.5s linear infinite",
+    },
+    noData: {
+        position: "absolute",
+        width: "100%",
+        textAlign: "center",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%,-50%)",
     },
     "@keyframes grow": {
         "50%": { transform: "scale(1.1)" },
