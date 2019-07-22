@@ -28,6 +28,7 @@ function iterate(cities, citiesByLetter = {}, pos = 0) {
 
 function useLogic() {
     const classes = useStyles()
+    const [, updateBackground] = useStore("background")
     const [cities, setCities] = useStore("cities")
     const [cityName, setCityName] = useState("")
     const [city, setCity] = useState()
@@ -48,6 +49,10 @@ function useLogic() {
         if (cities.M) setCity(cities.M[6359304])
         else setCity()
     }, [cities])
+
+    useEffect(() => {
+        if (city) updateBackground()
+    }, [city, updateBackground])
 
     function onChange({ target }) {
         setCityName(target.value)

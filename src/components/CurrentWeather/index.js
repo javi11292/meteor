@@ -1,6 +1,7 @@
 import React from "react"
 import moment from "moment"
 import Util from "libraries/Util"
+import Background from "components/Background"
 
 import useLogic from "./useLogic"
 
@@ -40,6 +41,7 @@ const CurrentWeather = React.memo(props => {
 
     return (
         <div className={classes.root}>
+            <Background />
             <div className={classes.city}>{city.name}</div>
             <div className={classes.time}>{moment().format("dddd, MMMM D, HH:mm")}</div>
             {weather && (

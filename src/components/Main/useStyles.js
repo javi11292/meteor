@@ -10,14 +10,7 @@ export default makeStyles(theme => ({
         flexDirection: "column",
         alignItems: "center",
     },
-    background: {
-        backgroundImage: `url(${process.env.PUBLIC_URL}/images/city0.png)`,
-        backgroundSize: "cover",
-    },
     filter: {
-        position: "absolute",
-        width: "100%",
-        height: "100%",
         filter: `blur(${theme.spacing(3)}px)`
     },
     weatherInfoContainer: {

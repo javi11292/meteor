@@ -6,9 +6,8 @@ export default makeStyles(theme => ({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        backgroundImage: `url(${process.env.PUBLIC_URL}/images/city0.png)`,
-        backgroundSize: "cover",
         textShadow: "-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black",
+        position: "relative",
     },
     city: {
         fontSize: "2.5rem",
@@ -33,7 +32,7 @@ export default makeStyles(theme => ({
         margin: theme.spacing(6),
         background: "rgba(0,0,0,0.7)",
         lineHeight: 1,
-        padding: theme.spacing(1),
+        padding: theme.spacing(1.5),
         borderRadius: theme.spacing(1),
     },
     icon: {

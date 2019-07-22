@@ -5,7 +5,7 @@ import LoadingBar from "components/LoadingBar"
 import CurrentWeather from "components/CurrentWeather"
 import ForecastWeather from "components/ForecastWeather"
 import Fade from "components/Fade"
-import classnames from "classnames"
+import Background from "components/Background"
 
 import useLogic from "./useLogic"
 
@@ -14,7 +14,7 @@ const Main = props => {
 
     return (
         <div className={classes.root} onClick={onBlur}>
-            <div className={classnames(classes.background, classes.filter)} />
+            <Background className={classes.filter} />
             <LoadingBar />
 
             <div className={classes.weatherInfoContainer}>
