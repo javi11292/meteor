@@ -39,10 +39,18 @@ export default makeStyles(theme => ({
     icon: {
         height: "15rem",
     },
+    smallIcon: {
+        height: "2.5rem",
+        margin: theme.spacing(2),
+    },
     details: {
         display: "flex",
         flexDirection: "column",
         fontSize: "1.3rem",
         lineHeight: 2.5,
+    },
+    centerContent: {
+        display: "flex",
+        alignItems: "center",
     }
 }))

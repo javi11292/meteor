@@ -51,9 +51,27 @@ const CurrentWeather = React.memo(props => {
                             alt=""
                             className={classes.icon} />
                         <div className={classes.details}>
-                            <div>{pascalToHg(weather.main.pressure)} mm Hg</div>
-                            <div>{weather.main.humidity}% humidity</div>
-                            <div>{Math.round(weather.wind.speed)}m/s {getOrientation(weather.wind.deg)}</div>
+                            <div className={classes.centerContent}>
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/images/pressure.png`}
+                                    className={classes.smallIcon}
+                                    alt="" />
+                                <span>{pascalToHg(weather.main.pressure)} mm Hg</span>
+                            </div>
+                            <div className={classes.centerContent}>
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/images/humidity.png`}
+                                    className={classes.smallIcon}
+                                    alt="" />
+                                <span>{weather.main.humidity}% humidity</span>
+                            </div>
+                            <div className={classes.centerContent}>
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/images/wind.png`}
+                                    className={classes.smallIcon}
+                                    alt="" />
+                                <span>{Math.round(weather.wind.speed)}m/s {getOrientation(weather.wind.deg)}</span>
+                            </div>
                         </div>
                     </div>
                     <div className={classes.description}>
