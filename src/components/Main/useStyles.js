@@ -11,7 +11,7 @@ export default makeStyles(theme => ({
         alignItems: "center",
     },
     filter: {
-        filter: `blur(${theme.spacing(3)}px)`
+        filter: `blur(${theme.spacing(3)})`
     },
     weatherInfoContainer: {
         flex: 1,

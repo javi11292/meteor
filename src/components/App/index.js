@@ -13,7 +13,8 @@ const theme = createMuiTheme({
         background: {
             default: "rgb(10,10,10)"
         }
-    }
+    },
+    spacing: factor => `${0.5 * factor}rem`,
 })
 
 const App = props => {

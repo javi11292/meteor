@@ -29,7 +29,7 @@ export default makeStyles(theme => ({
     description: {
         fontWeight: 100,
         fontSize: "1.3rem",
-        margin: theme.spacing(6),
+        marginBottom: theme.spacing(6),
         background: "rgba(0,0,0,0.7)",
         lineHeight: 1,
         padding: theme.spacing(1.5),

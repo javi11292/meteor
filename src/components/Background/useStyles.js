@@ -10,7 +10,7 @@ export default makeStyles(theme => ({
     background: {
         width: "100%",
         height: "100%",
-        backgroundImage: props => `url(${process.env.PUBLIC_URL}/images/${props.background}.png)`,
+        backgroundImage: props => `url(${process.env.PUBLIC_URL}/${props.background})`,
         backgroundSize: "cover",
     }
 }))

@@ -30,6 +30,13 @@ class Util {
     static getCelsius(temperature) {
         return `${temperature < 273 ? "-" : "+"}${Math.round((temperature - 273))}º`
     }
+
+    static preloadImages(images) {
+        images.forEach(url => {
+            const image = new Image()
+            image.src = `${process.env.PUBLIC_URL}/${url}`
+        })
+    }
 }
 
 export default Util

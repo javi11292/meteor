@@ -91,7 +91,7 @@ export default makeStyles(theme => ({
         "100%": { transform: "scale(1)" },
     },
     "@keyframes shake": {
-        "from": { transform: `rotate(0deg) translateX(${theme.spacing(0.2)}px) rotate(0deg)` },
-        "to": { transform: `rotate(360deg) translateX(${theme.spacing(0.2)}px) rotate(-360deg)` },
+        "from": { transform: `rotate(0deg) translateX(${theme.spacing(0.2)}) rotate(0deg)` },
+        "to": { transform: `rotate(360deg) translateX(${theme.spacing(0.2)}) rotate(-360deg)` },
     },
 }))
