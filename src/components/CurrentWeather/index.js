@@ -49,7 +49,7 @@ const CurrentWeather = React.memo(props => {
                     <div className={classes.info}>
                         <div>{Util.getCelsius(weather.main.temp)}</div>
                         <img
-                            src={`http://openweathermap.org/img/wn/${weather.weather[0].icon.slice(0, -1)}d@2x.png`}
+                            src={`https://openweathermap.org/img/wn/${weather.weather[0].icon.slice(0, -1)}d@2x.png`}
                             alt=""
                             className={classes.icon} />
                         <div className={classes.details}>

@@ -39,7 +39,7 @@ const WeekDayWeather = React.memo(props => {
                             <img
                                 style={{ animationDelay: getDelay() }}
                                 className={classnames(classes.icon, getAnimation(props.info, classes))}
-                                src={props.info ? `http://openweathermap.org/img/wn/${props.info.weather[0].icon.slice(0, -1)}d@2x.png` : ""}
+                                src={props.info ? `https://openweathermap.org/img/wn/${props.info.weather[0].icon.slice(0, -1)}d@2x.png` : ""}
                                 alt="" />
                         </div>
                         {props.info ? Util.getCelsius(props.info.main.temp) : "No data"}
