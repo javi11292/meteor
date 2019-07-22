@@ -1,4 +1,4 @@
-export interface Props {
+export interface FetchInterface {
     /**
      * Make a get request to the given URL
      * @param url 
@@ -6,6 +6,6 @@ export interface Props {
     get(url: string): Promise<string | object>
 }
 
-declare function useFetch(): Props
+declare function useFetch(): FetchInterface
 
 export default useFetch

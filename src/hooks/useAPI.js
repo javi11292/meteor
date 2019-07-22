@@ -11,8 +11,9 @@ function useAPI() {
 
     const getForecastWeather = useCallback(city => makeRequest(`https://api.openweathermap.org/data/2.5/forecast?id=${city}`), [makeRequest])
 
-    const getCities = useCallback(city => {
-        return get(`${window.location.protocol}//${window.location.hostname}${window.location.port ? ":" + window.location.port : ""}${process.env.PUBLIC_URL}/city.list.json`)
+    const getCities = useCallback(() => {
+        return get(`${window.location.protocol}//${window.location.hostname}${window.location.port ?
+            ":" + window.location.port : ""}${process.env.PUBLIC_URL}/city.list.json`)
     }, [get])
 
     return { getCurrentWeather, getCities, getForecastWeather }

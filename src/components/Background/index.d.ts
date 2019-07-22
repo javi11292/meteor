@@ -1,10 +1,11 @@
 import React from "react"
 
-export interface BackgroundProps {
+export interface FadeBackgroundProps {
+    /** Class aplied to the background element */
     className?: string,
-    image: string,
 }
 
-declare const Background: React.ComponentType<BackgroundProps>
+/** Dynamic background from the store */
+declare const FadeBackground: React.ComponentType<FadeBackgroundProps>
 
-export default Background
+export default FadeBackground
