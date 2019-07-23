@@ -37,9 +37,11 @@ export default makeStyles(theme => ({
     },
     icon: {
         height: "15rem",
+        width: "15rem",
     },
     smallIcon: {
         height: "2.5rem",
+        width: "2.5rem",
         margin: theme.spacing(2),
     },
     details: {

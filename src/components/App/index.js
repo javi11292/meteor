@@ -22,9 +22,7 @@ const App = props => {
         <Store reducers={reducers}>
             <MuiThemeProvider theme={theme}>
                 <CssBaseline />
-                <div>
-                    <Main />
-                </div>
+                <Main />
             </MuiThemeProvider>
         </Store>
     )
