@@ -19,25 +19,19 @@ function useAPI() {
 
     const getForecastWeather = useCallback(city => makeRequest(`https://api.openweathermap.org/data/2.5/forecast?id=${city}`), [makeRequest])
 
-    const getCities = useCallback(city => new Promise((resolve, reject) => {
+    const getCities = useCallback(async city => {
         setLoading(true)
-        webWorker.addListener(data => {
-            resolve(data)
-            setLoading(false)
-        })
+        const cities = await webWorker.postMessage({ type: "cities", payload: city }, true)
+        setLoading(false)
+        return cities
+    }, [setLoading])
 
-        webWorker.postMessage({ payload: city })
-    }), [setLoading])
-
-    const getInitialCity = useCallback(() => new Promise((resolve, reject) => {
+    const getInitialCity = useCallback(async () => {
         setLoading(true)
-        webWorker.addListener(data => {
-            resolve(data)
-            setLoading(false)
-        })
-
-        webWorker.postMessage({ type: "initial" })
-    }), [setLoading])
+        const city = await webWorker.postMessage({ type: "initial" }, true)
+        setLoading(false)
+        return city
+    }, [setLoading])
 
     return { getCurrentWeather, getCities, getForecastWeather, getInitialCity }
 }

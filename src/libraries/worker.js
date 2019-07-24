@@ -25,13 +25,13 @@ export default () => {
                 break
             case "initial":
                 citiesPromise.then(cities => {
-                    self.postMessage(cities.M[MADRID_ID])
+                    self.postMessage({ type: data.type, payload: cities.M[MADRID_ID] })
                 })
                 break
             default:
                 citiesPromise.then(citiesByName => {
                     const cities = filterCities(citiesByName[data.payload.charAt(0).toUpperCase()] || [], data.payload)
-                    self.postMessage(cities)
+                    self.postMessage({ type: data.type, payload: cities })
                 })
         }
 

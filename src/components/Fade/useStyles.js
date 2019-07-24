@@ -5,7 +5,6 @@ export const TIMEOUT = 1000
 export default makeStyles(theme => ({
     enter: {
         opacity: "0",
-        zIndex: "1",
     },
     active: {
         opacity: "1",
