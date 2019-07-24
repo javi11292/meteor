@@ -1,38 +1,26 @@
 import { useState, useEffect } from "react"
-import { useStore } from "eztore"
+import useAPI from "hooks/useAPI"
 
 import useStyles from "./useStyles"
 
-const MAX_CITIES = 10
-
-function filterCities(cities, name) {
-    try {
-        const regExp = new RegExp(`^${name}`, "img")
-        let filteredCities = []
-        for (const cityId in cities) {
-            const city = cities[cityId]
-            if (city.name.match(regExp)) filteredCities.push(city)
-            if (filteredCities.length === MAX_CITIES) break
-        }
-        return filteredCities.sort((a, b) => a.name.localeCompare(b.name))
-    } catch { }
-    return []
-}
-
 function useLogic(props) {
     const classes = useStyles()
-    const [cities] = useStore("cities")
     const [filteredCities, setFilteredCities] = useState()
+    const { getCities } = useAPI()
 
     useEffect(() => {
-        if (!props.cityName) {
-            setFilteredCities()
-            return
+        async function makeRequest() {
+            if (!props.cityName) {
+                setFilteredCities()
+                return
+            }
+
+            const filteredCities = await getCities(props.cityName)
+            setFilteredCities(filteredCities.length ? filteredCities : undefined)
         }
 
-        const filteredCities = filterCities(cities[props.cityName.charAt(0).toUpperCase()] || [], props.cityName)
-        setFilteredCities(filteredCities.length ? filteredCities : undefined)
-    }, [props.cityName, cities])
+        makeRequest()
+    }, [props.cityName, getCities])
 
     return { classes, filteredCities }
 }

@@ -1,41 +1,18 @@
 import { useState, useEffect, useRef } from "react"
-import useAPI from "hooks/useAPI"
 import { useStore } from "eztore"
 import Util from "libraries/Util"
 import { BACKGROUNDS } from "libraries/constants"
+import useAPI from "hooks/useAPI"
 
 import useStyles from "./useStyles"
 
-const BATCH = 1000
-
-function iterate(cities, citiesByLetter = {}, pos = 0) {
-    return new Promise(resolve => {
-        for (let i = 0; i < BATCH; i++) {
-            const city = cities[pos + i]
-            if (!city) break
-
-            city.name = city.name.charAt(0).toUpperCase() + city.name.slice(1)
-            const letter = city.name.charAt(0)
-
-            if (!citiesByLetter[letter]) citiesByLetter[letter] = {}
-
-            citiesByLetter[letter][city.id] = city
-        }
-
-        const nextPos = pos + BATCH
-        if (nextPos > cities.length) resolve(citiesByLetter)
-        else setImmediate(() => resolve(iterate(cities, citiesByLetter, nextPos)))
-    })
-}
-
 function useLogic() {
     const classes = useStyles()
+    const { getInitialCity } = useAPI()
     const [, updateBackground] = useStore("background")
-    const [cities, setCities] = useStore("cities")
     const [cityName, setCityName] = useState("")
     const [city, setCity] = useState()
     const [showDialog, setShowDialog] = useState(false)
-    const { getCities } = useAPI()
     const inputRef = useRef()
 
     useEffect(() => {
@@ -43,18 +20,12 @@ function useLogic() {
     }, [])
 
     useEffect(() => {
-        async function loadCities() {
-            const cities = await getCities()
-            setCities(await iterate(cities))
+        async function makeRequest() {
+            setCity(await getInitialCity())
         }
 
-        loadCities()
-    }, [setCities, getCities])
-
-    useEffect(() => {
-        if (cities.M) setCity(cities.M[6359304])
-        else setCity()
-    }, [cities])
+        makeRequest()
+    }, [getInitialCity])
 
     useEffect(() => {
         if (city) updateBackground()

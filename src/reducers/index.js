@@ -12,10 +12,6 @@ export default {
         state: false,
         reducer: (state, value) => value,
     },
-    cities: {
-        state: {},
-        reducer: (state, value) => value,
-    },
     background: {
         state: BACKGROUNDS[0],
         reducer: updateBackground,

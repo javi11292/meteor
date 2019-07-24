@@ -12,9 +12,14 @@ export interface APIInterface {
     getForecastWeather(city: string): Promise<string | object>
 
     /**
-     * Get the list of cities
+     * Get the list of cities filtered by city name
      */
-    getCities(): Promise<string | object>
+    getCities(city: string): Promise<string | object>
+
+    /**
+     * Get the initial city
+     */
+    getInitialCity(): Promise<string | object>
 }
 
 declare function useAPI(): APIInterface
