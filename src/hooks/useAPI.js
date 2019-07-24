@@ -7,7 +7,7 @@ import { useStore } from "eztore"
 
 const webWorker = new WebWorker(worker)
 
-webWorker.postMessage({ type: "load", payload: `${window.location.href}/${process.env.PUBLIC_URL}/city.list.json` })
+webWorker.postMessage({ type: "load", payload: `${window.location.protocol}//${window.location.hostname}${process.env.PUBLIC_URL}/city.list.json` })
 
 function useAPI() {
     const { get } = useFetch()
