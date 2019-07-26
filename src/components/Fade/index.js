@@ -6,7 +6,7 @@ import useStyles, { TIMEOUT } from "./useStyles"
 
 const Fade = React.memo(props => {
     const classes = useStyles(props)
-
+    
     return (
         <TransitionGroup
             className={classes.root}

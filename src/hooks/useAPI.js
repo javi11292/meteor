@@ -11,7 +11,7 @@ webWorker.postMessage({ type: "load", payload: `${window.location.protocol}//${w
 
 function useAPI() {
     const { get } = useFetch()
-    const [, setLoading] = useStore("loading")
+    const setLoading = useStore("loading", true)
 
     const makeRequest = useCallback(url => get(`${url}&appid=${API_KEY}`), [get])
 

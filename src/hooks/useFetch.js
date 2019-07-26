@@ -2,7 +2,7 @@ import { useCallback } from "react"
 import { useStore } from "eztore"
 
 function useFetch() {
-    const [, setLoading] = useStore("loading")
+    const setLoading = useStore("loading", true)
 
     const get = useCallback(url => {
         async function makeRequest() {

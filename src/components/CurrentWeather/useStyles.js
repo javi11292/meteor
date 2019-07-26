@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core"
 
 export default makeStyles(theme => ({
     root: {
-        flex: 1,
+        flex: "auto",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -18,13 +18,17 @@ export default makeStyles(theme => ({
         fontWeight: 100,
     },
     info: {
+        marginTop: theme.spacing(6),
         fontSize: "10rem",
         fontWeight: 100,
-        flex: 1,
+        flex: "auto",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         lineHeight: 1,
+        [theme.breakpoints.down(800)]: {
+            flexDirection: "column",
+        }
     },
     description: {
         fontWeight: 100,

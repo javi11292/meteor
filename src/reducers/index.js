@@ -1,10 +1,26 @@
-import { BACKGROUNDS } from "libraries/constants"
+import { backgrounds } from "assets/images"
+import Util from "libraries/Util"
 
-let currentBackground = 0
+const preloadedImages = [0]
+let nextBackground = 0
+
 function updateBackground() {
-    const background = BACKGROUNDS[currentBackground]
-    currentBackground = (currentBackground + 1) % BACKGROUNDS.length
+    const background = backgrounds[nextBackground]
+    nextBackground = (nextBackground + 1) % backgrounds.length
+    preloadBackground(nextBackground)
     return background
+}
+
+function preloadBackground(index) {
+    if (!preloadedImages.includes(index)) {
+        Util.preloadImages([backgrounds[index]])
+        preloadedImages.push(index)
+    }
+}
+
+function initializeBackground() {
+    preloadBackground(1)
+    return backgrounds[0]
 }
 
 export default {
@@ -13,7 +29,7 @@ export default {
         reducer: (state, value) => value ? state + 1 : state - 1,
     },
     background: {
-        state: BACKGROUNDS[0],
+        state: initializeBackground(),
         reducer: updateBackground,
     }
 }

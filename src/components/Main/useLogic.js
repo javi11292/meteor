@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from "react"
 import { useStore } from "eztore"
-import Util from "libraries/Util"
-import { BACKGROUNDS } from "libraries/constants"
 import useAPI from "hooks/useAPI"
 
 import useStyles from "./useStyles"
@@ -9,15 +7,11 @@ import useStyles from "./useStyles"
 function useLogic() {
     const classes = useStyles()
     const { getInitialCity } = useAPI()
-    const [, updateBackground] = useStore("background")
+    const updateBackground = useStore("background", true)
     const [cityName, setCityName] = useState("")
     const [city, setCity] = useState()
     const [showDialog, setShowDialog] = useState(false)
     const inputRef = useRef()
-
-    useEffect(() => {
-        Util.preloadImages(BACKGROUNDS)
-    }, [])
 
     useEffect(() => {
         async function makeRequest() {

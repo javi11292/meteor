@@ -2,6 +2,7 @@ import React from "react"
 import moment from "moment"
 import Util from "libraries/Util"
 import Background from "components/Background"
+import { wind, pressure, humidity } from "assets/images"
 
 import useLogic from "./useLogic"
 
@@ -55,21 +56,21 @@ const CurrentWeather = React.memo(props => {
                         <div className={classes.details}>
                             <div className={classes.centerContent}>
                                 <img
-                                    src={`${process.env.PUBLIC_URL}/images/pressure.png`}
+                                    src={pressure}
                                     className={classes.smallIcon}
                                     alt="" />
                                 <span>{pascalToHg(weather.main.pressure)} mm Hg</span>
                             </div>
                             <div className={classes.centerContent}>
                                 <img
-                                    src={`${process.env.PUBLIC_URL}/images/humidity.png`}
+                                    src={humidity}
                                     className={classes.smallIcon}
                                     alt="" />
                                 <span>{weather.main.humidity}% humidity</span>
                             </div>
                             <div className={classes.centerContent}>
                                 <img
-                                    src={`${process.env.PUBLIC_URL}/images/wind.png`}
+                                    src={wind}
                                     className={classes.smallIcon}
                                     alt="" />
                                 <span>{Math.round(weather.wind.speed)}m/s {getOrientation(weather.wind.deg)}</span>

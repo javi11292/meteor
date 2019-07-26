@@ -34,7 +34,7 @@ class Util {
     static preloadImages(images) {
         images.forEach(url => {
             const image = new Image()
-            image.src = `${process.env.PUBLIC_URL}/${url}`
+            image.src = url
         })
     }
 }
