@@ -12,7 +12,7 @@ const LoadingBar = React.memo(props => {
         <Fade
             timeout={500}
             className={classes.root}
-            in={loading}>
+            in={loading > 0}>
             <LinearProgress
                 classes={{ root: classes.bar, barColorPrimary: classes.barColorPrimary }} />
         </Fade>

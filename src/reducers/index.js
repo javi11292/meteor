@@ -9,8 +9,8 @@ function updateBackground() {
 
 export default {
     loading: {
-        state: false,
-        reducer: (state, value) => value,
+        state: 0,
+        reducer: (state, value) => value ? state + 1 : state - 1,
     },
     background: {
         state: BACKGROUNDS[0],
