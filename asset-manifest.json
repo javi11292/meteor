@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.js": "/meteor/static/js/main.f63713a8.chunk.js",
-    "main.js.map": "/meteor/static/js/main.f63713a8.chunk.js.map",
+    "main.js": "/meteor/static/js/main.1cfef850.chunk.js",
+    "main.js.map": "/meteor/static/js/main.1cfef850.chunk.js.map",
     "runtime~main.js": "/meteor/static/js/runtime~main.c3248b4c.js",
     "runtime~main.js.map": "/meteor/static/js/runtime~main.c3248b4c.js.map",
-    "static/js/2.484e37b4.chunk.js": "/meteor/static/js/2.484e37b4.chunk.js",
-    "static/js/2.484e37b4.chunk.js.map": "/meteor/static/js/2.484e37b4.chunk.js.map",
+    "static/js/2.40384102.chunk.js": "/meteor/static/js/2.40384102.chunk.js",
+    "static/js/2.40384102.chunk.js.map": "/meteor/static/js/2.40384102.chunk.js.map",
     "index.html": "/meteor/index.html",
-    "precache-manifest.dd37280d90c668e920697d12ef2ef3e5.js": "/meteor/precache-manifest.dd37280d90c668e920697d12ef2ef3e5.js",
-    "service-worker.js": "/meteor/service-worker.js"
+    "precache-manifest.2a309bc8e6371d90032063a19cd7e752.js": "/meteor/precache-manifest.2a309bc8e6371d90032063a19cd7e752.js",
+    "service-worker.js": "/meteor/service-worker.js",
+    "static/media/background0.jpg": "/meteor/static/media/background0.435eb99b.jpg",
+    "static/media/background1.jpg": "/meteor/static/media/background1.73d607ff.jpg",
+    "static/media/background2.jpg": "/meteor/static/media/background2.7f46025b.jpg",
+    "static/media/background3.jpg": "/meteor/static/media/background3.73223499.jpg",
+    "static/media/humidity.png": "/meteor/static/media/humidity.daf0b095.png",
+    "static/media/pressure.png": "/meteor/static/media/pressure.872e9946.png"
   }
 }
